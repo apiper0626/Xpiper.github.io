@@ -20,6 +20,7 @@ jobs:
 
       - name: Install Dependencies and Build VuePress
         run: |
+          npm install -D sass-embedded
           npm install
           npm run docs:build
 
