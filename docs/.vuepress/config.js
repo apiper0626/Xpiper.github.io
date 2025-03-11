@@ -1,6 +1,6 @@
-import {defaultTheme} from "@vuepress/theme-default";
-import {defineUserConfig} from "vuepress/cli";
-import {viteBundler} from "@vuepress/bundler-vite";
+import { defaultTheme } from "@vuepress/theme-default";
+import { defineUserConfig } from "vuepress/cli";
+import { viteBundler } from "@vuepress/bundler-vite";
 
 export default defineUserConfig({
   theme: defaultTheme({
@@ -29,7 +29,7 @@ export default defineUserConfig({
             "生态数智云小程序接口(新).md",
             "嵌入式聊天bot接入指南.md",
             "播报推送.md",
-            "生态数智云小程序接口.md"
+            "生态数智云小程序接口.md",
           ],
         },
         {
@@ -93,8 +93,6 @@ export default defineUserConfig({
   title: "mydocs",
   description: "这是我的第一个 VuePress 站点",
   head: [
-    ["link", {rel: "icon", href: "https://vuejs.press/images/hero.png"}],
+    ["link", { rel: "icon", href: "https://vuejs.press/images/hero.png" }],
   ],
-  base: "/mydocs",
-  dest: "mydocs",
 });
