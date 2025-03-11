@@ -19,6 +19,11 @@ jobs:
 
       - name: 设置 pnpm
         uses: pnpm/action-setup@v4
+        with:
+          # 选择要使用的 pnpm 版本
+          version: latest
+          # 缓存 pnpm 依赖
+          run_install: true
 
       - name: 设置 Node.js
         uses: actions/setup-node@v4
