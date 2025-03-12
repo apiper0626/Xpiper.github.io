@@ -30,6 +30,7 @@ export default defineUserConfig({
             "嵌入式聊天bot接入指南.md",
             "播报推送.md",
             "生态数智云小程序接口.md",
+            "机器人相关接口.md",
           ],
         },
         {
@@ -95,4 +96,6 @@ export default defineUserConfig({
   head: [
     ["link", { rel: "icon", href: "https://vuejs.press/images/hero.png" }],
   ],
+  base: "/mydocs/",
+  dest: "mydocs",
 });
