@@ -78,6 +78,13 @@ Vue.use(StszyChatBot);
 
 引入组件到你的页面,推荐在App.vue或者Main.vue中引入
 
+#### 2.2.4 组件属性
+
+| 参数           | 说明                  | 类型     | 可选值        | 默认值  
+|--------------|---------------------|--------|------------|------|
+| accessToken  | 认证token(必填)         | String | -          | -    |
+| defaultTheme | 机器人的主题(提供亮色,暗色两种主题) | String | dark/light | dark |
+
 ```html
 
 <StszyChatBot :accessToken="你的token"/>
