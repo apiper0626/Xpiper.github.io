@@ -27,7 +27,7 @@ export default defineUserConfig({
             "des加解密.md",
             "模板类智能体接口.md",
             "生态数智云小程序接口(新).md",
-            "嵌入式聊天bot接入指南.md",
+            "生态数智云组件接入指南.md",
             "播报推送.md",
             "生态数智云小程序接口.md",
             "机器人相关接口.md",
