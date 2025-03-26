@@ -22,7 +22,7 @@ export default defineUserConfig({
           collapsible: true,
           prefix: "lpd/",
           children: [
-            "message-push.md",
+            "微信推送.md",
             "意图类接口统一返回格式.md",
             "des加解密.md",
             "模板类智能体接口.md",
@@ -74,7 +74,11 @@ export default defineUserConfig({
               text: "微信消息推送",
               collapsible: true,
               prefix: "微信消息推送/",
-              children: ["微信发送消息接口.md", "微信推送图片或文件.md"],
+              children: [
+                "微信发送消息接口.md",
+                "微信推送图片或文件.md",
+                "微信机器人接口.md",
+              ],
             },
             {
               text: "语音相关",
