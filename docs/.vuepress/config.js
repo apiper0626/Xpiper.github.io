@@ -18,6 +18,12 @@ export default defineUserConfig({
     sidebar: {
       "/api/": [
         {
+          text: "生态数智云",
+          collapsible: true,
+          prefix: "stszy/",
+          children: ["h5bot.md"],
+        },
+        {
           text: "李鹏达",
           collapsible: true,
           prefix: "lpd/",
