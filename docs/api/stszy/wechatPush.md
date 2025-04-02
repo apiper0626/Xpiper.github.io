@@ -1,4 +1,4 @@
-# 微信消息推送接口文档 v1.0.0
+# 微信消息推送
 
 ## 1 规范说明
 
@@ -22,15 +22,14 @@ HTTPS、HTTP 协议
 
 ## 2. 接口定义
 
-| 环境        | baseUrl                                |
-| ----------- | -------------------------------------- |
-| 正式(https) | https://app.aepic.net:11090/apiservice |
-| 正式(http)  | http://114.115.131.79:11094/apiservice |
+| 环境        | baseUrl                                   |
+| ----------- | ----------------------------------------- |
+| 正式(https) | https://webchat.aepic.net:9601/apiservice |
 
 ### 2.1 推送消息
 
 - **接口说明：** 根据推送规则编码,推送文本或者链接类消息
-- **接口地址：** https://app.aepic.net:11090/apiservice/message/pushMessage
+- **接口地址：** /message/pushMessage
 - **请求方式：** POST
 
 #### 2.1.1 请求参数

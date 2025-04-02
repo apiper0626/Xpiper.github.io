@@ -9,7 +9,7 @@
 ### 2.1 广播发布接口
 
 - **接口说明**：发布广播消息
-- **接口地址**：`https://api3.aepic.net:9601/wdptapi/broadcast/publish`
+- **接口地址**：`https://webchat.aepic.net:9601/wdptapi/broadcast/publish`
 - **请求方式**：POST
 
 #### 2.1.1 请求参数
@@ -72,7 +72,7 @@
 ### 2.2 广播订阅接口
 
 - **接口说明**：订阅广播消息
-- **订阅地址**：`https://api3.aepic.net:9601/wdptapi/ws`
+- **订阅地址**：`https://webchat.aepic.net:9601/wdptapi/ws`
 - **协议**：STOMP
 
 #### 2.2.1 订阅说明
