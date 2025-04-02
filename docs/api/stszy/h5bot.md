@@ -1,4 +1,4 @@
-# html5 聊天机器人接入指南
+# html5 聊天机器人
 
 ## 1. 文档说明
 
@@ -12,7 +12,7 @@
 
 #### 2.1.1 调用获取 Token 的接口
 
-1. **接口地址**: `https://api3.aepic.net:9601/wdptapi/sysAuth/authThird`
+1. **接口地址**: `https://webchat.aepic.net:9601/wdptapi/sysAuth/authThird`
 2. **请求方法**: `POST`
 3. **请求参数**:
 
@@ -50,7 +50,7 @@
 
 在获取到 `access_token` 后，可以生成接入链接。链接格式如下：
 
-`https://api3.aepic.net:9601/h5bot/#/AgentChat?access_token=<access_token>&agent_id=<agent_id>&theme=<theme>`
+`https://webchat.aepic.net:9601/h5bot/#/AgentChat?access_token=<access_token>&agent_id=<agent_id>&theme=<theme>`
 
 #### 参数说明
 
@@ -62,7 +62,7 @@
 
 #### 示例链接
 
-`https://api3.aepic.net:9601/h5bot/#/AgentChat?access_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzeXN0ZW1faWQiOiJBSVdEUFQwMDEiLCJpc192aXAiOiIxIiwiaXNzIjoic2FpbGhlcm8iLCJleHAiOjE3NDM1NzgxODIsImFjY291bnQiOiIxMzAyODY5NTgyOSJ9.8Oj3FgME2Fk-tDeHPaKxGPHh8sEskKpBu17q8buRfxs&agent_id=200667950157844043191154906&theme=light`
+`https://webchat.aepic.net:9601/h5bot/#/AgentChat?access_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzeXN0ZW1faWQiOiJBSVdEUFQwMDEiLCJpc192aXAiOiIxIiwiaXNzIjoic2FpbGhlcm8iLCJleHAiOjE3NDM1NzgxODIsImFjY291bnQiOiIxMzAyODY5NTgyOSJ9.8Oj3FgME2Fk-tDeHPaKxGPHh8sEskKpBu17q8buRfxs&agent_id=200667950157844043191154906&theme=light`
 
 ### 2.3 使用说明
 

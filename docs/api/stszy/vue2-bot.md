@@ -1,4 +1,4 @@
-# 生态数智云组件接入指南
+# 生态数智云组件(vue2.x)
 
 ## 1. 文档说明
 
@@ -13,36 +13,39 @@
 
 #### 2.1.1 调取获取 Token 的接口
 
-1. **接口地址**: `http://36.134.82.195:9600/wdptapi/sysAuth/authThird`
+1. **接口地址**: `http://webchat.aepic.net:9601/wdptapi/sysAuth/authThird`
 2. **请求方法**: `POST`
 3. **请求参数**:
-    - `account`: 用户账号。
-    - `systemID`: 你的系统ID。
+
+   - `account`: 用户账号。
+   - `systemID`: 你的系统ID。
 
 4. **示例请求**:
 
    ```json
-    {
+   {
      "account": "13028695829",
      "systemID": "1"
-    }
+   }
    ```
 
 5. **响应示例**:
 
    ```json
    {
-    "data": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc192aXAiOiIxIiwiaXNzIjoic2FpbGhlcm8iLCJleHAiOjE3Mjg3MDA4MDYsImFjY291bnQiOiIxMzAyODY5NTgyOSJ9.ghi0tJcm1OvZI1en61DkOyBFjuP-XHlrOmv3g-5_C24",
-    "msg": "成功",
-    "code": "200",
-    "count": 0
+     "data": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc192aXAiOiIxIiwiaXNzIjoic2FpbGhlcm8iLCJleHAiOjE3Mjg3MDA4MDYsImFjY291bnQiOiIxMzAyODY5NTgyOSJ9.ghi0tJcm1OvZI1en61DkOyBFjuP-XHlrOmv3g-5_C24",
+     "msg": "成功",
+     "code": "200",
+     "count": 0
    }
    ```
+
    参数说明：
-    - `data`: 获取到的 Token。
-    - `msg`: 响应消息。
-    - `code`: 响应状态码 200 表示成功。
-    - `count`: 响应数据条数。
+
+   - `data`: 获取到的 Token。
+   - `msg`: 响应消息。
+   - `code`: 响应状态码 200 表示成功。
+   - `count`: 响应数据条数。
 
 ### 2.2 安装VUE组件
 
@@ -62,8 +65,7 @@ npm 安装 stszy-chat-bot 组件库,注意使用[npm官方源](https://www.npmjs
 
 main.js
 
-```javascript
-
+```js
 import StszyChatBot from "stszy-chat-bot";
 import "stszy-chat-bot/stszy-chat-bot.css";
 
@@ -71,7 +73,6 @@ import "stszy-chat-bot/stszy-chat-bot.css";
 Vue.use(ElementUI);
 // 放在Vue.use(ElementUI)之后
 Vue.use(StszyChatBot);
-
 ```
 
 #### 2.2.3 添加到页面
@@ -79,16 +80,15 @@ Vue.use(StszyChatBot);
 引入组件到你的页面,推荐在App.vue或者Main.vue中引入
 
 ```html
-
-<StszyChatBot :accessToken="你的token"/>
+<StszyChatBot :accessToken="你的token" />
 ```
 
 #### 2.2.4 组件属性
 
-| 参数           | 说明                  | 类型     | 可选值        | 默认值  |
-|--------------|---------------------|--------|------------|------|
-| accessToken  | 认证token(必填)         | String | -          | -    |
-| defaultTheme | 机器人的主题(提供亮色,暗色两种主题) | String | dark/light | dark |
+| 参数         | 说明                                | 类型   | 可选值     | 默认值 |
+| ------------ | ----------------------------------- | ------ | ---------- | ------ |
+| accessToken  | 认证token(必填)                     | String | -          | -      |
+| defaultTheme | 机器人的主题(提供亮色,暗色两种主题) | String | dark/light | dark   |
 
 ### 2.3 使用
 
