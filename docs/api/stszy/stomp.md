@@ -23,6 +23,7 @@
 | **title**                  | string | 必填     | 广播消息的标题               |
 | **content**                | string | 必填     | 广播消息的内容               |
 | **systemLink**             | string | 可选     | 要跳转的系统链接             |
+| **messageType**            | string | 可选     | 消息类型                     |
 | **fileList**               | array  | 可选     | 附件列表                     |
 | fileList[n].fileName       | string | 必填     | 附件文件名                   |
 | fileList[n].fileLink       | string | 必填     | 附件文件链接                 |
@@ -37,6 +38,7 @@
   "title": "紧急通知",
   "content": "紧急通知：存在网络安全风险，请立刻检查。",
   "systemLink": "https://www.baidu.com",
+  "messageType": "消息类型",
   "fileList": [
     {
       "fileName": "a.pdf",
@@ -117,6 +119,7 @@ stompClient.connect({}, function (frame) {
 | **content**                | string | 广播消息的内容               |
 | **systemID**               | string | 系统 ID（要推送给的系统 ID） |
 | **systemLink**             | string | 要跳转的系统链接             |
+| **messageType**            | string | 消息类型                     |
 | **fileList**               | array  | 附件列表                     |
 | fileList[n].fileName       | string | 附件文件名                   |
 | fileList[n].fileLink       | string | 附件文件链接                 |

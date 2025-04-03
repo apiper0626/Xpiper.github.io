@@ -13,7 +13,7 @@
 
 #### 2.1.1 调取获取 Token 的接口
 
-1. **接口地址**: `http://webchat.aepic.net:9601/wdptapi/sysAuth/authThird`
+1. **接口地址**: `http://webchat.aepic.net:9601/wdptapi/sysAuth/authThirdUser`
 2. **请求方法**: `POST`
 3. **请求参数**:
 
