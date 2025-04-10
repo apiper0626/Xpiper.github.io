@@ -9,11 +9,11 @@
 ### 2.1 获取 access_token
 
 在开始嵌入 AI 对话机器人之前，首先需要获取一个有效的 access_token。access_token
-是用于身份验证和授权的凭证，确保只有授权用户才能使用该服务。
+是用于身份验证和授权的凭证，确保只有授权用户才能使用该服务。token 有效期为 10 天，过期后需要重新获取。
 
 #### 2.1.1 调取获取 Token 的接口
 
-1. **接口地址**: `http://webchat.aepic.net:9601/wdptapi/sysAuth/authThirdUser`
+1. **接口地址**: `https://webchat.aepic.net:9601/wdptapi/sysAuth/authThirdUser`
 2. **请求方法**: `POST`
 3. **请求参数**:
 
@@ -80,16 +80,26 @@ Vue.use(StszyChatBot);
 引入组件到你的页面,推荐在App.vue或者Main.vue中引入
 
 ```html
-<StszyChatBot :accessToken="你的token" />
+<StszyChatBot
+  :access-token="access_token"
+  v-if="access_token"
+  :show-notice-page="false"
+  :show-settings-page="false"
+  :default-theme="dark"
+/>
 ```
 
 #### 2.2.4 组件属性
 
-| 参数         | 说明                                | 类型   | 可选值     | 默认值 |
-| ------------ | ----------------------------------- | ------ | ---------- | ------ |
-| accessToken  | 认证token(必填)                     | String | -          | -      |
-| defaultTheme | 机器人的主题(提供亮色,暗色两种主题) | String | dark/light | dark   |
+| 参数             | 说明                                | 类型    | 可选值     | 默认值 |
+| ---------------- | ----------------------------------- | ------- | ---------- | ------ |
+| accessToken      | 认证token(必填)                     | String  | -          | -      |
+| defaultTheme     | 机器人的主题(提供亮色,暗色两种主题) | String  | dark/light | dark   |
+| showNoticePage   | 是否显示通知页面                    | Boolean | true/false | true   |
+| showSettingsPage | 是否显示设置页面                    | Boolean | true/false | true   |
 
 ### 2.3 使用
 
 在页面中引入组件后，即可在页面右下角中看到对话机器人组件，点击即可和机器人进行对话。
+![对话机器人组件](/ai.png)
+![对话机器人组件](/ai2.png)
