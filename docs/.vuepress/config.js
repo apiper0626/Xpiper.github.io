@@ -27,6 +27,7 @@ export default defineUserConfig({
             "wechatPush.md",
             "stomp.md",
             "botApi.md",
+            "xiaochengxuApi.md",
           ],
         },
         {
@@ -37,8 +38,6 @@ export default defineUserConfig({
             "意图类接口统一返回格式.md",
             "des加解密.md",
             "模板类智能体接口.md",
-            "生态数智云小程序接口(新).md",
-            "生态数智云小程序接口.md",
           ],
         },
         // {
