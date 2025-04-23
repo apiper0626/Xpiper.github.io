@@ -124,9 +124,8 @@
 ```json
 {
   "data": {
-    "account": "13028695829",
-    "system_id": "WEIXIN",
-    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzeXN0ZW1faWQiOiJXRUlYSU4iLCJpc192aXAiOiIxIiwiaXNzIjoic2FpbGhlcm8iLCJleHAiOjE3NDE5MzUyNDEsImFjY291bnQiOiIxMzAyODY5NTgyOSJ9.R-Sb41r4IdIf2tLJB2_Q0OMoK_5_o-Tb11KYHi49PNo"
+    "username": "李鹏达",
+    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX3R5cGUiOiJyb2xlX3VzZXIiLCJzeXN0ZW1faWQiOiJXRUlYSU4iLCJpc3MiOiJzYWlsaGVybyIsImV4cCI6MTc0NTQ3NTY3NCwiYWNjb3VudCI6IjEzMDI4Njk1ODI5IiwidXNlcm5hbWUiOiLmnY7puY_ovr4ifQ.BIezGB-Tn5tTKB95KtNp9ko9w4UCHCsfABdA3EY4n0w"
   },
   "msg": "成功",
   "code": "200",
@@ -134,11 +133,21 @@
 }
 ```
 
+失败响应
+
+```json
+{
+  "data": "",
+  "msg": "未授权，请与管理员进行联系",
+  "code": "1008",
+  "count": 0
+}
+```
+
 #### 字段说明
 
 - `data`:
-  - `account`: 账号
-  - `system_id`: 系统 id
+  - `username`: 用户名
   - `token`: 令牌
 - `msg` : 消息
 - `code`: 状态码
@@ -152,7 +161,7 @@
 
 #### 请求示例
 
-`GET /sysAuth/fetchUserInfo`
+`GET /applet/fetchUserInfo`
 
 #### 返回结果
 
@@ -181,15 +190,15 @@
 - `code`: 状态码
 - `count`: 计数
 
-### 3.5 体验用户登陆
+### 3.5 获取小程序设置接口
 
-- **接口说明：** 体验用户登陆
-- **接口地址：** /applet/guestLogin
+- **接口说明：** 获取小程序设置接口
+- **接口地址：** /applet/fetchAppletSetting
 - **请求方式：** get
 
 #### 请求示例
 
-`GET /sysAuth/guestLogin`
+`GET /applet/fetchAppletSetting`
 
 #### 返回结果
 
@@ -197,7 +206,10 @@
 
 ```json
 {
-  "data": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzeXN0ZW1faWQiOiJXRUlYSU4iLCJpc3MiOiJzYWlsaGVybyIsImV4cCI6MTc0NTI4NTgwNSwiYWNjb3VudCI6Imd1ZXN0In0.pdKpGazcdEL6uzMgQg-rW4cpC4WafyKGwe8yMRMBIx4",
+  "data": {
+    "show_guest": true,
+    "id": "1"
+  },
   "msg": "成功",
   "code": "200",
   "count": 0
@@ -206,7 +218,9 @@
 
 #### 字段说明
 
-- `data`: 令牌
+- `data`:
+  - `show_guest`: 是否显示游客登录 (boolean)
+  - `id`: 设置 ID
 - `msg` : 消息
 - `code`: 状态码
 - `count`: 计数
@@ -223,13 +237,13 @@
 
 | 参数名称 | 类型   | 出现要求 | 描述           |
 | :------- | :----- | :------- | :------------- |
-| con_type | string | R        | 固定值`intent` |
+| con_type | string | R        | 固定值`normal` |
 
 #### 请求示例
 
 ```json
 {
-  "con_type": "intent"
+  "con_type": "normal"
 }
 ```
 
@@ -240,13 +254,22 @@
 ```json
 {
   "data": {
-    "id": 1,
+    "id": 21,
     "avatar": "https://xh-ai.obs.cn-north-1.myhuaweicloud.com:443/avatar/2024/09/15/png/53592382965716751451579409.png",
     "name": "知识专家",
     "introduction": "专业致力于生态环境科学的研究与实践，着力于环境问题的创新解决，旨在为环保管理提供精准的决策依据",
     "opening_line": "您好，我是生态环境知识专家。很高兴您对生态环境保护和可持续发展感兴趣。请问您有什么具体问题或者需要了解哪方面的知识？",
-    "guidance_lines": "沙尘天气过程中颗粒物粒径分布特征？,湿度对PM2.5的影响？,粒径谱数据如何指导日常的管控以及溯源工作？,在工地管控方面有哪些措施？"
-    // ...
+    "guidance_lines": "沙尘天气过程中颗粒物粒径分布特征？,湿度对PM2.5的影响？,粒径谱数据如何指导日常的管控以及溯源工作？,在工地管控方面有哪些措施？",
+    "create_time": "1900-01-01 00:00:00.0",
+    "update_time": "2025-03-14 14:42:15.65",
+    "con_type": "normal",
+    "api_url": "",
+    "api_key": "",
+    "system_id": "WEIXIN",
+    "show_deep_seek": "0",
+    "show_net_search": "0",
+    "dify_name": "",
+    "show_retriever_resources": "0"
   },
   "msg": "成功",
   "code": "200",
@@ -261,8 +284,10 @@
   - `avatar`: 头像
   - `name`: 名称
   - `introduction`: 简介
-  - `opening_line`: 开场白
   - `guidance_lines`: 引导问题, 以逗号分隔
+  - `show_deep_seek`: 是否显示深度思考 0 - 不显示 1 - 显示
+  - `show_net_search`: 是否显示联网搜索 0 - 不显示 1 - 显示
+  - `show_retriever_resources`: 是否显示知识库 0 - 不显示 1 - 显示
 - `msg` : 消息
 - `code`: 状态码
 - `count`: 计数
