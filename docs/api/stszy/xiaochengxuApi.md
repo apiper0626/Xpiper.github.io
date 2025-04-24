@@ -1336,6 +1336,50 @@ onmessage: async (ev) => {
 - `code`: 状态码
 - `count`: 计数
 
+## 7. 其他
+
+### 7.1 导出markdown为word
+
+- **接口说明：** 导出markdown为word
+- **接口地址：** /applet/markdownToWord
+- **请求方式：** post(application/json)
+
+#### 请求参数
+
+| 参数名称 | 类型   | 出现要求 | 描述            |
+| :------- | :----- | :------- | :-------------- |
+| markdown | string | R        | markdown 字符串 |
+
+#### 请求示例
+
+对话指令
+
+```json
+{
+  "markdown": "# title"
+}
+```
+
+#### 返回结果
+
+成功响应
+
+```json
+{
+  "data": "https://xh-ai.obs.cn-north-1.myhuaweicloud.com:443/docx/2025/04/24/docx/1915225992196419584.docx",
+  "msg": "成功",
+  "code": "200",
+  "count": 0
+}
+```
+
+#### 字段说明
+
+- `data`: word 文件地址
+- `msg` : 消息
+- `code`: 状态码
+- `count`: 计数
+
 ## 异常结果返回格式
 
 ```json
