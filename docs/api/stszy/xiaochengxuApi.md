@@ -1352,8 +1352,6 @@ onmessage: async (ev) => {
 
 #### 请求示例
 
-对话指令
-
 ```json
 {
   "markdown": "# title"
@@ -1376,6 +1374,51 @@ onmessage: async (ev) => {
 #### 字段说明
 
 - `data`: word 文件地址
+- `msg` : 消息
+- `code`: 状态码
+- `count`: 计数
+
+### 7.2 获取agent名称转义列表
+
+- **接口说明：** 获取agent名称转义列表
+- **接口地址：** /dify/fetchToolMappingList
+- **请求方式：** get
+
+#### 请求示例
+
+`GET /dify/fetchToolMappingList`
+
+#### 返回结果
+
+成功响应
+
+```json
+{
+  "data": [
+    {
+      "tool_code": "getAirCityRankData",
+      "tool_label": "获取沙河空气质量排名数据",
+      "comment": ""
+    },
+    {
+      "tool_code": "getAlarmGzData",
+      "tool_label": "获取沙河空气质量高值数据",
+      "comment": ""
+    }
+    // ...
+  ],
+  "msg": "成功",
+  "code": "200",
+  "count": 0
+}
+```
+
+#### 字段说明
+
+- `data`:
+  - `tool_code`: 工具代码
+  - `tool_label`: 工具名称
+  - `comment`: 备注
 - `msg` : 消息
 - `code`: 状态码
 - `count`: 计数
