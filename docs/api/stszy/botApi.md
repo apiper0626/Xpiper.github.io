@@ -14,12 +14,12 @@
 
   - 此接口提供基于 Dify 工作流的流式对话功能，允许客户端通过 SSE（Server-Sent
     Events）接收实时对话消息。
-  - [点击访问平台](http://36.134.82.195:8090/app/ee05c4c7-0332-403b-8913-2d6ca578b98e/develop)
+  - [点击访问平台](https://chat.aepic.net:8090/app/774a6b9f-ee23-4f99-9c55-32adb3998355/develop)
   - **账号：** 992378304@qq.com
   - **密码：** wangzhq@0812
 
-  请仔细阅读并参考[访问 API](http://36.134.82.195:8090/app/ee05c4c7-0332-403b-8913-2d6ca578b98e/develop)
-  以及[发送对话消息接口](http://36.134.82.195:8090/app/ee05c4c7-0332-403b-8913-2d6ca578b98e/develop)
+  请仔细阅读并参考[访问 API](https://chat.aepic.net:8090/app/774a6b9f-ee23-4f99-9c55-32adb3998355/develop)
+  以及[发送对话消息接口](https://chat.aepic.net:8090/app/774a6b9f-ee23-4f99-9c55-32adb3998355/develop)
   文档。
 
 - **接口地址：** /mobileApp/chat-messages
@@ -27,15 +27,19 @@
 
 #### 请求参数
 
-| 参数名称 | 类型   | 出现要求 | 描述              |
-| :------- | :----- | :------- | :---------------- |
-| query    | string | R        | 用户输入/提问内容 |
+| 参数名称       | 类型   | 出现要求 | 描述                                                   |
+| :------------- | :----- | :------- | :----------------------------------------------------- |
+| query          | string | R        | 用户输入/提问内容                                      |
+| systemId       | string | R        | 系统id(用于加载不同的配置信息)                         |
+| conversationId | string | O        | 对话id(需要历史记忆时传入,由dify流程中返回,新对话传空) |
 
 #### 请求示例
 
 ```json
 {
-  "query": "石家庄空气质量"
+  "query": "石家庄空气质量",
+  "systemId": "SHSAPP001",
+  "conversationId": ""
 }
 ```
 
@@ -43,11 +47,11 @@
 
 成功响应
 
-参考[访问 API](http://36.134.82.195:8090/app)
+参考[访问 API](https://chat.aepic.net:8090/apps)
 
 #### 字段说明
 
-参考[访问 API](http://36.134.82.195:8090/app)
+参考[访问 API](https://chat.aepic.net:8090/apps)
 
 ### 2.2 获取系统配置接口
 
