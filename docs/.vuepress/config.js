@@ -28,6 +28,7 @@ export default defineUserConfig({
             "stomp.md",
             "botApi.md",
             "xiaochengxuApi.md",
+            "aiParser.md",
           ],
         },
         {
