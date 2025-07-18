@@ -29,6 +29,7 @@ export default defineUserConfig({
             "botApi.md",
             "xiaochengxuApi.md",
             "aiParser.md",
+            "gzsy-bot.md",
           ],
         },
         {
