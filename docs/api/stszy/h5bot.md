@@ -59,15 +59,17 @@
 | `access_token` | 认证 Token，由接口动态获取,`有有效时间,建议每次都重新获取` | 是       | `eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9...` |
 | `agent_id`     | 机器人 ID，由服务方提供                                    | 是       | `200667950157844043191154906`             |
 | `theme`        | 机器人的主题，支持亮色和暗色两种主题                       | 是       | `light` 或 `dark`                         |
+| `show_header`  | 是否显示头部新对话,和历史对话(按钮)                        | 否       | `true` 或 `false`，默认为 `false`         |
 
 #### 示例链接
 
-`https://webchat.aepic.net:9601/h5bot/#/AgentChat?access_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzeXN0ZW1faWQiOiJBSVdEUFQwMDEiLCJpc192aXAiOiIxIiwiaXNzIjoic2FpbGhlcm8iLCJleHAiOjE3NDM1NzgxODIsImFjY291bnQiOiIxMzAyODY5NTgyOSJ9.8Oj3FgME2Fk-tDeHPaKxGPHh8sEskKpBu17q8buRfxs&agent_id=200667950157844043191154906&theme=light`
+`https://webchat.aepic.net:9601/h5bot/#/AgentChat?access_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzeXN0ZW1faWQiOiJBSVdEUFQwMDEiLCJpc192aXAiOiIxIiwiaXNzIjoic2FpbGhlcm8iLCJleHAiOjE3NDM1NzgxODIsImFjY291bnQiOiIxMzAyODY5NTgyOSJ9.8Oj3FgME2Fk-tDeHPaKxGPHh8sEskKpBu17q8buRfxs&agent_id=200667950157844043191154906&theme=light&show_header=true`
 
 ### 2.3 使用说明
 
 1. 将生成的链接嵌入到你的网页中，用户点击链接即可打开对话机器人页面。
 2. 可根据需求选择 `theme` 参数的值，设置为 `light` 或 `dark`，以适配页面风格。
 3. 确保 `access_token` 是动态生成的，并在有效期内使用。
+4. 如果需要显示头部新对话和历史对话按钮，可以将 `show_header` 参数设置为 `true`。
 
 通过以上步骤，即可快速接入 html5 聊天机器人。
